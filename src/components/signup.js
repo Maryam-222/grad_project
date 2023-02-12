@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Form from 'react-bootstrap/Form';
 export default class SignUp extends Component {
   render() {
     return (
@@ -31,7 +32,19 @@ export default class SignUp extends Component {
             className="form-control"
             placeholder="Enter password"
           />
+
+        
+
         </div>
+
+        <div className="mb-3">
+          <Form.Select aria-label="Default select example">
+      <option>sign up as...</option>
+      <option value="1">User</option>
+      <option value="2">Doctor</option>
+      </Form.Select>
+          </div>
+
         <div className="d-grid">
           <button type="submit" className="btn btn-danger">
             Sign Up

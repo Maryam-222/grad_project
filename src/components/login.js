@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Form from 'react-bootstrap/Form';
 export default class Login extends Component {
   render() {
     return (
@@ -20,6 +21,16 @@ export default class Login extends Component {
             placeholder="Enter password"
           />
         </div>
+
+        <div className="mb-3">
+          <Form.Select aria-label="Default select example">
+      <option>Log in  as...</option>
+      <option value="1">User</option>
+      <option value="2">Doctor</option>
+      </Form.Select>
+          </div>
+
+
         <div className="mb-3">
           <div className="custom-control custom-checkbox">
             <input
