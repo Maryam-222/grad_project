@@ -4,13 +4,15 @@ import './App.css'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import Login from './components/login'
 import SignUp from './components/signup'
+import Navbar from './components/view'
+
 function App() {
-  return (
+  return (    
     <Router>
       <div className="App">
-        <nav className="navbar navbar-expand-lg navbar-light fixed-top">
+        {/* <nav className="navbar navbar-expand-lg navbar-light fixed-top">
           <div className="container">
-            <Link className="navbar-brand" to={'/sign-in'}>
+            <Link className="navbar-brand" to={'/view'}>
                <h2>CardioVISION</h2> 
             </Link>
             <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
@@ -25,20 +27,28 @@ function App() {
                   <h4>Sign Up</h4>
                   </Link>
                 </li>
+
+
               </ul>
             </div>
           </div>
-        </nav>
-        <div className="auth-wrapper">
+        </nav> */}
+        {/* <div className="auth-wrapper">
           <div className="auth-inner">
             <Routes>
-              <Route exact path="/" element={<Login />} />
+              <Route exact path="/" element={<Navbar />} />
               <Route path="/sign-in" element={<Login />} />
               <Route path="/sign-up" element={<SignUp />} />
             </Routes>
           </div>
-        </div>
+        </div> */}
+       <Routes>
+              <Route exact path="/" element={<Navbar />} />
+              <Route path="/sign-in" element={<Login />} />
+              <Route path="/sign-up" element={<SignUp />} />
+            </Routes>
       </div>
+
     </Router>
   )
 }
