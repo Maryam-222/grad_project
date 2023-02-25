@@ -10,12 +10,13 @@ function Navbar() {
 
         <div>
   <header className="header">
-    <a href="#" className="logo">
+    <a href="/" className="logo">
       CardioVISION
     </a>
     <nav className="nav-items">
-      <a href="#">Home</a>
-      <a href="#">About</a>
+      <a href="#home">Home</a>
+      <a href="#features">Features</a>
+      <a href="#about">About</a>
       
 
       <NavDropdown title="English" id="collasible-nav-dropdown">
@@ -26,14 +27,14 @@ function Navbar() {
     </nav>
   </header>
   <main>
-    <div className="intro">
+    <div className="intro" id='home'>
       <h1>Welcome To CardioVISION</h1>
       <p>It's Your Way To a Healthier Life</p>
       <a href='/sign-up'>
     <Button variant="primary">let's Sign Up</Button>
 </a>
     </div>
-    <div className="achievements">
+    <div className="achievements" id='features'>
       <div className="work">
         <i className="fas fa-atom" />
         <p className="work-heading">Who We Are</p>
@@ -42,7 +43,7 @@ function Navbar() {
           website to help others improving there health.
         </p>
       </div>
-      <div className="work">
+      <div className="work" id='features'>
         <i className="fas fa-skiing" />
         <p className="work-heading">Features</p>
         <p className="work-text">
@@ -50,7 +51,7 @@ function Navbar() {
          predict percentage of there exposure to ischemic heart disease
         </p>
       </div>
-      <div className="work">
+      <div className="work" id='features'>
         <i className="fas fa-ethernet" />
         <p className="work-heading">Goals</p>
         <p className="work-text">
@@ -58,7 +59,7 @@ function Navbar() {
         </p>
       </div>
     </div>
-    <div className="about-me">
+    <div className="about-me" id='about'>
       <div className="about-me-text">
         <h2>About Ischemic Heart Disease</h2>
         <p>
@@ -79,18 +80,19 @@ function Navbar() {
     <div className="bottom-links">
       <div className="links">
         <span>More Info</span>
-        <a href="#">Home</a>
-        <a href="#">About</a>
+        <a href="#home">Home</a>
+        <a href="#features">Features</a>
+        <a href="#about">About</a>
       </div>
       <div className="links">
-        <a href="#">
+        <a href="wwww.facebbok.com">
           <i className="fab fa-facebook" />
         </a>
-        <a href="#">
+        <a href="wwww.twitter.com">
           <i className="fab fa-twitter" />
         </a>
-        <a href="#">
-          <i className="fab fa-instagram" />
+        <a href="wwww.linkedin.com">
+          <i className="fa fa-linkedin"></i>
         </a>
       </div>
     </div>
