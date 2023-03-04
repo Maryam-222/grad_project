@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import Form from 'react-bootstrap/Form';
+import { Button } from 'react-bootstrap';
+
 export default class Login extends Component {
   render() {
     return (
@@ -47,11 +49,14 @@ export default class Login extends Component {
                 </label>
               </div>
             </div>
-            <div className="d-grid">
+            {/* <div className="d-grid">
               <button type="submit" className="btn btn-danger">
                 Submit
               </button>
-            </div>
+            </div> */}
+            <a href='/dashboard'>
+              <Button variant="danger">Submit</Button>
+            </a>
             <p className="forgot-password text-right">
               Forgot <a href="#">password?</a>
             </p>

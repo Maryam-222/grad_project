@@ -1,12 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import { createRoot } from 'react-dom/client';
 import App from './App';
+import Kommunicate from '@kommunicate/kommunicate-chatbot-plugin';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+Kommunicate.init("9844f2bd88e5f80df7c3b0a87aea8c01")
+
+const root = createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
 );
-
-

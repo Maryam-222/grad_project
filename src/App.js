@@ -1,55 +1,43 @@
-import React from 'react'
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
-import './App.css'
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Analytics from './pages/Analytics';
+import About from './pages/About';
+import Comment from './pages/Comment';
+import Dashboard from './components/dashboard';
+import UsersList from './pages/UsersList';
+import Users from './pages/Users';
 import Login from './components/login'
 import SignUp from './components/signup'
-import Navbar from './components/view'
+import View from './components/view'
+import { ThemeProvider } from './ThemeContext'
+
+import './App.css';
+import KommunicateChat from './chat';
+import ThemeToggler from './ThemeToggler';
+
 
 function App() {
-  return (    
-    <Router>
-      <div className="App">
-        {/* <nav className="navbar navbar-expand-lg navbar-light fixed-top">
-          <div className="container">
-            <Link className="navbar-brand" to={'/view'}>
-               <h2>CardioVISION</h2> 
-            </Link>
-            <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
-              <ul className="navbar-nav ml-auto">
-                <li className="nav-item">
-                  <Link className="nav-link" to={'/sign-in'}>
-                    <h4>Login</h4>
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to={'/sign-up'}>
-                  <h4>Sign Up</h4>
-                  </Link>
-                </li>
-
-
-              </ul>
-            </div>
-          </div>
-        </nav> */}
-        {/* <div className="auth-wrapper">
-          <div className="auth-inner">
+  return (
+    <ThemeProvider>
+        <div>
+          <KommunicateChat />
+          <BrowserRouter>
             <Routes>
-              <Route exact path="/" element={<Navbar />} />
+              <Route exact path="/" element={<View />} />
               <Route path="/sign-in" element={<Login />} />
               <Route path="/sign-up" element={<SignUp />} />
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/comment" element={<Comment />} />
+              <Route path="/analytics" element={<Analytics />} />
+              <Route path="/users" element={<UsersList />} />
+              <Route path="/users/:userId" element={<Users />} />
             </Routes>
-          </div>
-        </div> */}
-       <Routes>
-              <Route exact path="/" element={<Navbar />} />
-              <Route path="/sign-in" element={<Login />} />
-              <Route path="/sign-up" element={<SignUp />} />
-            </Routes>
-      </div>
-
-    </Router>
+          </BrowserRouter>
+        </div>
+    </ThemeProvider>
   )
 }
+
+
 export default App

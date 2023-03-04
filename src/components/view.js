@@ -1,34 +1,46 @@
-import React, { Component } from 'react'
+import { ThemeContext } from '../ThemeContext';
 import Button from 'react-bootstrap/Button';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { FaAdjust } from 'react-icons/fa';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Navbar, Nav, ButtonGroup, ToggleButton } from 'react-bootstrap';
+import React, { useContext } from 'react';
 
+function NavbarComponent() {
+  const { theme, toggleTheme } = useContext(ThemeContext)
+  const backgroundColor = theme === 'light' ? 'white' : 'black';
 
-
-
-
-function Navbar() {
   return (
+    <div className={`my-component theme-${theme}`} style={{ backgroundColor }}>
+      
+      <header className="header custom-header">
+        <div className="d-flex justify-content-end">
+          <Navbar expand="lg" variant="light" className="custom-navbar">
+            <div className="container d-flex">
+              <Navbar.Brand href="/" className="logo">CardioVISION</Navbar.Brand>
+            </div>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <div className="d-flex flex-row-reverse">
+              <Nav className="ml-auto">
+                <Nav.Link href="#home">Home</Nav.Link>
+                <Nav.Link href="#features">Features</Nav.Link>
+                <Nav.Link href="#about">About</Nav.Link>
+                <NavDropdown title="Languages" id="basic-nav-dropdown">
+                  <NavDropdown.Item href="#">English</NavDropdown.Item>
+                  <NavDropdown.Item href="#">عربي</NavDropdown.Item>
+                </NavDropdown>
+              </Nav>
+              <ButtonGroup>
+                <ToggleButton variant="outline-secondary" onClick={toggleTheme}>
+                  <FaAdjust />
+                </ToggleButton>
+              </ButtonGroup>
+            </div>
+          </Navbar>
+        </div>
 
-
-    <div>
-      <header className="header">
-        <a href="/" className="logo">
-          CardioVISION
-        </a>
-        <nav className="nav-items">
-          <a href="#home">Home</a>
-          <a href="#features">Features</a>
-          <a href="#about">About</a>
-
-
-          <NavDropdown title="English" id="collasible-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">عربى</NavDropdown.Item>
-          </NavDropdown>
-
-
-        </nav>
       </header>
       <main>
         <div className="intro" id='home'>
@@ -79,42 +91,7 @@ function Navbar() {
           />
         </div>
       </main>
-      {/* <footer className="footer">
-        <div className="copy">© 2023 Developer</div>
-        <div className="bottom-links">
-          <div className="links">
-            <span>More Info</span>
-            <a href="#home">Home</a>
-            <a href="#features">Features</a>
-            <a href="#about">About</a>
-          </div>
-          {/* <div className="links">
-            <a href="https://www.facebook.com">
-              <FontAwesomeIcon icon="fa-brands fa-facebook" />
-            </a>
-            <a href="https://www.twitter.com">
-              <FontAwesomeIcon icon="fa-brands fa-twitter" />
-            </a>
-            <a href="https://www.linkedin.com">
-              <FontAwesomeIcon icon="fa-brands fa-linkedin" />
-            </a>
-          </div> *}
-          <div className="links">
-            <a href="https://www.facebook.com">
-              <FontAwesomeIcon icon={faFacebook} />
-            </a>
-            <a href="https://www.twitter.com">
-              <FontAwesomeIcon icon={faTwitter} />
-            </a>
-            <a href="https://www.linkedin.com">
-              <FontAwesomeIcon icon={faLinkedin} />
-            </a>
-          </div>
-
-        </div>
-      </footer> */}
-
-      <footer className="footer">
+      <footer className={`my-component theme-${theme} footer` }  style={{ backgroundColor }}>
         <div className="copy">© 2023 Developer</div>
         <div className="bottom-links">
           <div className="links">
@@ -138,13 +115,8 @@ function Navbar() {
         </div>
       </footer>
 
-
-
     </div>
-
-
-
   )
 }
 
-export default Navbar;
+export default NavbarComponent;
