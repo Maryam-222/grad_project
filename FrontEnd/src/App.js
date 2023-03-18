@@ -9,7 +9,7 @@ import Login from './components/login'
 import SignUp from './components/signup'
 import View from './components/view'
 import { ThemeProvider } from './ThemeContext'
-import Userprofile from './components/profile'
+import Userprofile from './pages/profile'
 import Form from './components/form';
 
 import './App.css';

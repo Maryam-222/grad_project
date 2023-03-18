@@ -4,7 +4,8 @@ import {
   FaUserAlt,
   FaRegChartBar,
   FaCommentAlt,
-  FaThList
+  FaThList,
+  FaUser
 } from "react-icons/fa";
 import { NavLink } from 'react-router-dom';
 
@@ -32,6 +33,11 @@ const Sidebar = ({ children }) => {
       path: "/patientsList",
       name: "Patients List",
       icon: <FaThList />,
+    },
+    {
+      path: "/profile",
+      name: "Profile",
+      icon: <FaUser />,
     }
   ]
   return (
